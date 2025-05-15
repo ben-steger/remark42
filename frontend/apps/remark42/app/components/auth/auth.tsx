@@ -357,6 +357,20 @@ export function Auth() {
               </>
             )}
           </form>
+          <div className={clsx('auth-or-login', styles.row)} style="margin-left">
+          <div className={clsx('auth-divider', styles.divider)} style="margin-left:10px; margin-right:10px;" title="or"></div>
+        </div>
+        <div className={clsx('auth-row', styles.row)}>
+            <button
+              type="button" style="margin-left: auto; margin-right: auto;"
+              className={clsx('auth-button', styles.rdsButton)}
+              onClick={() => {
+                window.parent.postMessage({ type: "rds-login" }, "https://racedaysetup.com");
+              }}
+            >
+              Sign In 🔐
+            </button>
+          </div>
         </div>
       )}
     </div>

@@ -72,7 +72,10 @@ class AuthPanelComponent extends Component<Props, State> {
           {user.name}
         </button>{' '}
         <div className={clsx('user-logout-button', styles.userLogoutButton)}>
-          <IconButton title={this.props.intl.formatMessage(messages.signout)} onClick={this.props.signout}>
+          <IconButton title={this.props.intl.formatMessage(messages.signout)} onClick={() => {
+            postMessageToParent({ signout: true, profile: null });
+            this.props.signout();
+          }}>
             <SignOutIcon size="14" />
           </IconButton>
         </div>
